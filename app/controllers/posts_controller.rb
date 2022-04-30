@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-
+  before_action :correct_user, only: %i[ edit update destroy ]
 
 
   # GET /posts or /posts.json
@@ -58,6 +58,11 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def correct_user
+    @post = current_user.posts.find_by(id: params[:id])
+    redirect_to posts_path, notice: "Not Authorized To Edit This Post" if @post.nil?
   end
 
   private
