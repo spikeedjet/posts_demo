@@ -1,3 +1,7 @@
-<h1>Welcome to the home page.</h1>
+<% if user_signed_in? %>
+	<h1>Welcom, please enjoy!</h1>
+<% else %>
+	<h1>Please sign in to create your post!.</h1>
+<%end%>
 
 
