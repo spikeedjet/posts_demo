@@ -1,21 +1,21 @@
 <h1>Posts</h1>
 <div id="posts">
-  <% @posts.each do |post| %>
-    <div id="<%= dom_id post %>" class="card" style="width: 42rem;">
-      <div class="card-body">
-        <h3  class="card-title"><%= post.title %></h3>
-          <i>
-            Posted <%= time_tag post.created_at, "data-local": "time-ago" %>
-          </i>
-          <p class="card-text"><%= post.content %></p>
-          <p>
-            <i><%= pluralize post.comments.count, "comment"%></i>
-          </p>
-          <%= link_to "show",  post,  class:"btn btn-outline-secondary" %>
-      </div>
-    </div>
-    <br>
-  <% end %>
+	<% @posts.each do |post| %>
+		<div id="<%= dom_id post %>" class="card" style="width: 42rem;">
+			<div class="card-body">
+				<h3  class="card-title"><%= post.title %></h3>
+					<i>
+						Posted <%= time_tag post.created_at, "data-local": "time-ago" %>
+					</i>
+					<p class="card-text"><%= post.content %></p>
+					<p>
+						<i><%= pluralize post.comments.count, "comment"%></i>
+					</p>
+					<%= link_to "show",  post,  class:"btn btn-outline-secondary" %>
+			</div>
+		</div>
+		<br>
+	<% end %>
 </div>
 <br>
 <br>

@@ -29,3 +29,8 @@
   padding: 0 !important;
   max-width: 100% !important;
 }
+
+.trix-content {
+  max-height: 800px !important;   #set whatever height you want
+  overflow-y: auto;
+}
