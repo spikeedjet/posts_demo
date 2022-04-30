@@ -1,0 +1,12 @@
+<h1>My Posts</h1>
+
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+    <p>
+      <button type="button" class="btn btn-outline-secondary"><%= link_to "Show this post", post %></button>
+    </p>
+  <% end %>
+</div>
+
