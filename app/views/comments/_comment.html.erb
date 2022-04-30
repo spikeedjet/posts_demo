@@ -1,5 +1,4 @@
 <div id="<%= dom_id(comment) %>">
-	<li class="list-group-item"><%= comment.content %> - <%= time_tag comment.created_at, "data-local": "time-ago" %></li>
-	
-
+  <p>--<%= comment.content %></p>
+  <p class="text-end"><%= time_tag comment.created_at, "data-local": "time-ago" %></p>
 </div>

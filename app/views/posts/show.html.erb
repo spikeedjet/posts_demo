@@ -1,13 +1,18 @@
 <%= turbo_stream_from @post %>
-
 <p style="color: green"><%= notice %></p>
-
-<%= render @post %>
+<h1>Post</h1>
+  <h2 class="text-center"><%= @post.title %></h2>
+  <h4 class="text-start"><%= @post.content %></h4>
+  <p class="text-end">Posted <%= time_tag @post.created_at, "data-local": "time-ago" %></p>
+<br>
+<br>
+<div class="btn-group" role="group">
+  <%= link_to "Edit", edit_post_path(@post), class:"btn btn-outline-secondary" %>
+  <%= link_to "Back", posts_path, class:"btn btn-outline-secondary" %>
+  <%= button_to "Delete", @post, method: :delete, class:"btn btn-outline-secondary" %>
+</div>
+<br>
+<br>
 <%= render "posts/comments", post: @post  %>
 
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
 
-  <%= button_to "Destroy this post", @post, method: :delete %>
-</div>
